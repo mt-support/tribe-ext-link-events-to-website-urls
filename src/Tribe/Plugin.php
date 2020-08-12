@@ -34,7 +34,7 @@ class Plugin extends \tad_DI52_ServiceProvider {
 	 *
 	 * @var string
 	 */
-	const FILE = TRIBE_EXTENSION___TRIBE_SLUG_CLEAN_UPPERCASE___FILE;
+	const FILE = TRIBE_EXTENSION_LINK_EVENTS_TO_WEBSITE_URLS_FILE;
 
 	/**
 	 * @since 1.1.0

@@ -68,7 +68,7 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 */
 	public function load_text_domains() {
 		$mopath = tribe( Plugin::class )->plugin_dir . 'lang/';
-		$domain = 'link-events-to-website-urls';
+		$domain = 'tribe-ext-link-events-to-website-urls';
 
 		// This will load `wp-content/languages/plugins` files first.
 		\Tribe__Main::instance()->load_text_domain( $domain, $mopath );
