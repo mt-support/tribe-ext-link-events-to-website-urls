@@ -58,7 +58,8 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 * @since 1.1.0
 	 */
 	protected function add_filters() {
-
+		add_filter( 'tribe_get_event_link', [ $this, 'tribe_get_event_link' ], 10, 2 );
+		add_filter( 'tribe_get_event', [ $this, 'tribe_alter_event_link' ] );
 	}
 
 	/**
@@ -72,5 +73,43 @@ class Hooks extends \tad_DI52_ServiceProvider {
 
 		// This will load `wp-content/languages/plugins` files first.
 		\Tribe__Main::instance()->load_text_domain( $domain, $mopath );
+	}
+
+	/**
+	 * Make event titles link to URLs from their respective "Event Website" fields.
+	 *
+	 * @since 1.0.0
+	 * @param string $link Event Link
+	 * @param int $post_id Event ID
+	 * @return string Event Link
+	 */
+	public function tribe_get_event_link( $link, $post_id ) {
+
+		$website_url = tribe_get_event_website_url( $post_id );
+
+		if ( ! empty( $website_url ) ) {
+			$link = $website_url;
+		}
+
+		return $link;
+	}
+
+	/**
+	 * Alter Event Link for new Calendar views
+	 *
+	 * @since 1.1.0
+	 * @param $event array Event data
+	 *
+	 * @return mixed The Event post object or array, `null` if not found.
+	 */
+	public function tribe_alter_event_link( $event ) {
+
+		$website_url = tribe_get_event_website_url( $event );
+
+		if ( ! empty( $website_url ) ) {
+			$event->permalink = $website_url;
+		}
+
+		return $event;
 	}
 }
