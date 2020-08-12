@@ -1,5 +1,5 @@
 <?php
-namespace Tribe\Extensions\__TRIBE_NAMESPACE__;
+namespace Tribe\Extensions\Event_Link_To_Website_URL;
 
 use Tribe__Main;
 
@@ -125,7 +125,7 @@ class Settings_Helper {
 				$misc_heading = [
 					'tribeMiscSettings' => [
 						'type' => 'html',
-						'html' => '<h3>' . esc_html__( 'Miscellaneous Settings', 'tribe-ext-extension-template' ) . '</h3>',
+						'html' => '<h3>' . esc_html__( 'Miscellaneous Settings', 'tribe-ext-link-events-to-website-urls' ) . '</h3>',
 					],
 				];
 				$fields       = Tribe__Main::array_insert_before_key( 'tribe-form-content-end', $fields, $misc_heading );

@@ -1,57 +1,57 @@
 <?php
-namespace Tribe\Extensions\__TRIBE_NAMESPACE__;
+namespace Tribe\Extensions\Event_Link_To_Website_URL;
 
 /**
  * Class Plugin
  *
- * @since   __TRIBE_VERSION__
+ * @since   1.1.0
  *
- * @package Tribe\Extensions\__TRIBE_NAMESPACE__
+ * @package Tribe\Extensions\Event_Link_To_Website_URL
  */
 class Plugin extends \tad_DI52_ServiceProvider {
 	/**
 	 * Stores the version for the plugin.
 	 *
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 *
 	 * @var string
 	 */
-	const VERSION = '__TRIBE_VERSION__';
+	const VERSION = '1.1.0';
 
 	/**
 	 * Stores the base slug for the plugin.
 	 *
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 *
 	 * @var string
 	 */
-	const SLUG = '__TRIBE_SLUG__';
+	const SLUG = 'link-events-to-website-urls';
 
 	/**
 	 * Stores the base slug for the extension.
 	 *
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 *
 	 * @var string
 	 */
 	const FILE = TRIBE_EXTENSION___TRIBE_SLUG_CLEAN_UPPERCASE___FILE;
 
 	/**
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 *
 	 * @var string Plugin Directory.
 	 */
 	public $plugin_dir;
 
 	/**
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 *
 	 * @var string Plugin path.
 	 */
 	public $plugin_path;
 
 	/**
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 *
 	 * @var string Plugin URL.
 	 */
@@ -62,7 +62,7 @@ class Plugin extends \tad_DI52_ServiceProvider {
 	 *
 	 * This always executes even if the required plugins are not present.
 	 *
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 */
 	public function register() {
 		// Set up the plugin provider properties.
@@ -72,8 +72,8 @@ class Plugin extends \tad_DI52_ServiceProvider {
 
 		// Register this provider as the main one and use a bunch of aliases.
 		$this->container->singleton( static::class, $this );
-		$this->container->singleton( 'extension.__TRIBE_SLUG_CLEAN__', $this );
-		$this->container->singleton( 'extension.__TRIBE_SLUG_CLEAN__.plugin', $this );
+		$this->container->singleton( 'extension.link_events_to_website_urls', $this );
+		$this->container->singleton( 'extension.link_events_to_website_urls.plugin', $this );
 		$this->container->register( PUE::class );
 
 		if ( ! $this->check_plugin_dependencies() ) {
@@ -94,7 +94,7 @@ class Plugin extends \tad_DI52_ServiceProvider {
 	/**
 	 * Checks whether the plugin dependency manifest is satisfied or not.
 	 *
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 *
 	 * @return bool Whether the plugin dependency manifest is satisfied or not.
 	 */
@@ -111,13 +111,13 @@ class Plugin extends \tad_DI52_ServiceProvider {
 	/**
 	 * Registers the plugin and dependency manifest among those managed by Tribe Common.
 	 *
-	 * @since __TRIBE_VERSION__
+	 * @since 1.1.0
 	 */
 	protected function register_plugin_dependencies() {
 		$plugin_register = new Plugin_Register();
 		$plugin_register->register_plugin();
 
 		$this->container->singleton( Plugin_Register::class, $plugin_register );
-		$this->container->singleton( 'extension.__TRIBE_SLUG_CLEAN__', $plugin_register );
+		$this->container->singleton( 'extension.link_events_to_website_urls', $plugin_register );
 	}
 }

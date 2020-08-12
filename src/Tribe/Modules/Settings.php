@@ -1,6 +1,6 @@
 <?php
 
-namespace Tribe\Extensions\__TRIBE_NAMESPACE__;
+namespace Tribe\Extensions\Event_Link_To_Website_URL;
 
 use Tribe__Settings_Manager;
 
@@ -80,7 +80,7 @@ class Settings {
 	 */
 	private function set_options_prefix( $options_prefix = '' ) {
 		if ( empty( $opts_prefix ) ) {
-			$opts_prefix = str_replace( '-', '_', 'tribe-ext-extension-template' ); // The text domain.
+			$opts_prefix = str_replace( '-', '_', 'tribe-ext-link-events-to-website-urls' ); // The text domain.
 		}
 
 		$opts_prefix = $opts_prefix . '_';
@@ -224,8 +224,8 @@ class Settings {
 			// TODO: Settings heading end.
 			'a_setting' => [ // TODO
 				'type'            => 'text',
-				'label'           => esc_html__( 'xxx try this', 'tribe-ext-extension-template' ),
-				'tooltip'         => sprintf( esc_html__( 'Enter your custom URL, including "http://" or "https://", for example %s.', 'tribe-ext-extension-template' ), '<code>https://wpshindig.com/events/</code>' ),
+				'label'           => esc_html__( 'xxx try this', 'tribe-ext-link-events-to-website-urls' ),
+				'tooltip'         => sprintf( esc_html__( 'Enter your custom URL, including "http://" or "https://", for example %s.', 'tribe-ext-link-events-to-website-urls' ), '<code>https://wpshindig.com/events/</code>' ),
 				'validation_type' => 'html',
 			],
 		];
@@ -266,10 +266,10 @@ class Settings {
 	 * @return string
 	 */
 	private function get_example_intro_text() {
-		$result = '<h3>' . esc_html_x( 'Example Extension Setup', 'Settings header', 'tribe-ext-extension-template' ) . '</h3>';
+		$result = '<h3>' . esc_html_x( 'Example Extension Setup', 'Settings header', 'tribe-ext-link-events-to-website-urls' ) . '</h3>';
 		$result .= '<div style="margin-left: 20px;">';
 		$result .= '<p>';
-		$result .= esc_html_x( 'Some text here about this settings section.', 'Settings', 'tribe-ext-extension-template' );
+		$result .= esc_html_x( 'Some text here about this settings section.', 'Settings', 'tribe-ext-link-events-to-website-urls' );
 		$result .= '</p>';
 		$result .= '</div>';
 

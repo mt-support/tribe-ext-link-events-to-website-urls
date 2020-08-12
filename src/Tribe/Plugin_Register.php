@@ -2,21 +2,21 @@
 /**
  * Handles the Extension plugin dependency manifest registration.
  *
- * @since __TRIBE_VERSION__
+ * @since 1.1.0
  *
- * @package Tribe\Extensions\__TRIBE_NAMESPACE__
+ * @package Tribe\Extensions\Event_Link_To_Website_URL
  */
 
-namespace Tribe\Extensions\__TRIBE_NAMESPACE__;
+namespace Tribe\Extensions\Event_Link_To_Website_URL;
 
 use Tribe__Abstract_Plugin_Register as Abstract_Plugin_Register;
 
 /**
  * Class Plugin_Register.
  *
- * @since   __TRIBE_VERSION__
+ * @since   1.1.0
  *
- * @package Tribe\Extensions\__TRIBE_NAMESPACE__
+ * @package Tribe\Extensions\Event_Link_To_Website_URL
  *
  * @see Tribe__Abstract_Plugin_Register For the plugin dependency manifest registration.
  */
