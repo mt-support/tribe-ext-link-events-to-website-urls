@@ -58,8 +58,8 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 * @since 1.1.0
 	 */
 	protected function add_filters() {
-		add_filter( 'tribe_get_event_link', [ $this, 'tribe_get_event_link' ], 10, 2 );
-		add_filter( 'tribe_get_event', [ $this, 'tribe_alter_event_link' ] );
+		add_filter( 'tribe_get_event_link', [ $this, 'filter_get_event_link' ], 10, 2 );
+		add_filter( 'tribe_get_event', [ $this, 'filter_permalink_for_event' ] );
 	}
 
 	/**
@@ -83,7 +83,7 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 * @param int $post_id Event ID
 	 * @return string Event Link
 	 */
-	public function tribe_get_event_link( $link, $post_id ) {
+	public function filter_get_event_link( $link, $post_id ) {
 
 		$website_url = tribe_get_event_website_url( $post_id );
 
@@ -102,7 +102,7 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 *
 	 * @return mixed The Event post object or array, `null` if not found.
 	 */
-	public function tribe_alter_event_link( $event ) {
+	public function filter_permalink_for_event( $event ) {
 
 		$website_url = tribe_get_event_website_url( $event );
 
