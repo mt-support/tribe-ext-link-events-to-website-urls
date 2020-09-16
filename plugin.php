@@ -38,7 +38,7 @@ define( 'TRIBE_EXTENSION_LINK_EVENTS_TO_WEBSITE_URLS_FILE', __FILE__ );
  */
 function tribe_extension_link_events_to_website_urls() {
 	// When we dont have autoloader from common we bail.
-	if  ( ! class_exists( 'Tribe__Autoloader' ) ) {
+	if ( ! class_exists( 'Tribe__Autoloader' ) ) {
 		return;
 	}
 

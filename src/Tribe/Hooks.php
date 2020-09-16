@@ -5,13 +5,13 @@
  * To remove a filter:
  * ```php
  *  remove_filter( 'some_filter', [ tribe( Tribe\Extensions\Event_Link_To_Website_URL\Hooks::class ), 'some_filtering_method' ] );
- *  remove_filter( 'some_filter', [ tribe( 'events-virtual.hooks' ), 'some_filtering_method' ] );
+ *  remove_filter( 'some_filter', [ tribe( 'extension.link_events_to_website_urls' ), 'some_filtering_method' ] );
  * ```
  *
  * To remove an action:
  * ```php
  *  remove_action( 'some_action', [ tribe( Tribe\Extensions\Event_Link_To_Website_URL\Hooks::class ), 'some_method' ] );
- *  remove_action( 'some_action', [ tribe( 'events-virtual.hooks' ), 'some_method' ] );
+ *  remove_action( 'some_action', [ tribe( 'extension.link_events_to_website_urls' ), 'some_method' ] );
  * ```
  *
  * @since   1.1.0
@@ -79,8 +79,10 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	 * Make event titles link to URLs from their respective "Event Website" fields.
 	 *
 	 * @since 1.0.0
-	 * @param string $link Event Link
-	 * @param int $post_id Event ID
+	 *
+	 * @param $link string Event Link
+	 * @param $post_id int Event ID
+	 *
 	 * @return string Event Link
 	 */
 	public function filter_get_event_link( $link, $post_id ) {
@@ -95,12 +97,13 @@ class Hooks extends \tad_DI52_ServiceProvider {
 	}
 
 	/**
-	 * Alter Event Link for new Calendar views
+	 * Alter Event Link for new Calendar views.
 	 *
 	 * @since 1.1.0
-	 * @param $event array Event data
 	 *
-	 * @return mixed The Event post object or array, `null` if not found.
+	 * @param \WP_Post $event The event post object.
+	 *
+	 * @return \WP_Post The event post object.
 	 */
 	public function filter_permalink_for_event( $event ) {
 

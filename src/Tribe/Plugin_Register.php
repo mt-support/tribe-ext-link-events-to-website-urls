@@ -14,7 +14,7 @@ use Tribe__Abstract_Plugin_Register as Abstract_Plugin_Register;
 /**
  * Class Plugin_Register.
  *
- * @since   1.1.0
+ * @since 1.1.0
  *
  * @package Tribe\Extensions\Event_Link_To_Website_URL
  *
