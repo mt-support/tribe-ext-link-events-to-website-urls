@@ -4,7 +4,7 @@ namespace Tribe\Extensions\Event_Link_To_Website_URL;
 /**
  * Class Plugin
  *
- * @since   1.1.0
+ * @since 1.1.0
  *
  * @package Tribe\Extensions\Event_Link_To_Website_URL
  */
@@ -81,14 +81,7 @@ class Plugin extends \tad_DI52_ServiceProvider {
 			return;
 		}
 
-		// Start binds.
-
-
-
-		// End binds.
-
 		$this->container->register( Hooks::class );
-		$this->container->register( Assets::class );
 	}
 
 	/**
