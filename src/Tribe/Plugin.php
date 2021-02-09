@@ -74,7 +74,6 @@ class Plugin extends \tad_DI52_ServiceProvider {
 		$this->container->singleton( static::class, $this );
 		$this->container->singleton( 'extension.link_events_to_website_urls', $this );
 		$this->container->singleton( 'extension.link_events_to_website_urls.plugin', $this );
-		$this->container->register( PUE::class );
 
 		if ( ! $this->check_plugin_dependencies() ) {
 			// If the plugin dependency manifest is not met, then bail and stop here.
