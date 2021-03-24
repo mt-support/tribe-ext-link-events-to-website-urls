@@ -33,6 +33,10 @@ We're always interested in your feedback and our [Help Desk](https://support.the
 
 == Changelog ==
 
+= [1.2.0] 2021-03-24 =
+
+* Initial release
+
 = [1.1.0] 2020-08-15 =
 
 * Initial release
