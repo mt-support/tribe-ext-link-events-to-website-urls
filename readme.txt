@@ -35,7 +35,7 @@ We're always interested in your feedback and our [Help Desk](https://support.the
 
 = [1.2.0] 2021-03-24 =
 
-* Initial release
+* Prevent notice from showing up on the admin based on license key.
 
 = [1.1.0] 2020-08-15 =
 
