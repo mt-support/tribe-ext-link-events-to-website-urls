@@ -28,6 +28,15 @@ class PUE extends \tad_DI52_ServiceProvider {
 	 * @var string
 	 */
 	private static $pue_slug = 'extension-link-events-to-website-urls';
+	
+	/**
+	 * Is PUE active?
+	 *
+	 * @since 1.1.0
+	 *
+	 * @var string
+	 */
+	public static $is_active = false;
 
 	/**
 	 * Plugin update URL.
@@ -55,6 +64,10 @@ class PUE extends \tad_DI52_ServiceProvider {
 	public function register() {
 		$this->container->singleton( static::class, $this );
 		$this->container->singleton( 'extension.link_events_to_website_urls.pue', $this );
+		
+		if ( ! static::$is_active ) {
+			return;
+		}
 
 		add_action( 'tribe_helper_activation_complete', [ $this, 'load_plugin_update_engine' ] );
 
