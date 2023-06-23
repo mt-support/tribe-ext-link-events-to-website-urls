@@ -1,6 +1,7 @@
 <?php
 namespace Tribe\Extensions\Event_Link_To_Website_URL;
 
+use TEC\Common\Contracts\Service_Provider;
 /**
  * Class Plugin
  *
@@ -8,7 +9,7 @@ namespace Tribe\Extensions\Event_Link_To_Website_URL;
  *
  * @package Tribe\Extensions\Event_Link_To_Website_URL
  */
-class Plugin extends \tad_DI52_ServiceProvider {
+class Plugin extends Service_Provider {
 	/**
 	 * Stores the version for the plugin.
 	 *

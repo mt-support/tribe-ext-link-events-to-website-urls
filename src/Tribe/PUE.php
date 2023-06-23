@@ -10,6 +10,7 @@
 namespace Tribe\Extensions\Event_Link_To_Website_URL;
 
 use Tribe__PUE__Checker;
+use TEC\Common\Contracts\Service_Provider;
 
 /**
  * Class PUE.
@@ -18,7 +19,7 @@ use Tribe__PUE__Checker;
  *
  * @package Tribe\Extensions\Event_Link_To_Website_URL;
  */
-class PUE extends \tad_DI52_ServiceProvider {
+class PUE extends Service_Provider {
 
 	/**
 	 * The slug used for PUE.
@@ -28,7 +29,7 @@ class PUE extends \tad_DI52_ServiceProvider {
 	 * @var string
 	 */
 	private static $pue_slug = 'extension-link-events-to-website-urls';
-	
+
 	/**
 	 * Is PUE active?
 	 *
@@ -64,7 +65,7 @@ class PUE extends \tad_DI52_ServiceProvider {
 	public function register() {
 		$this->container->singleton( static::class, $this );
 		$this->container->singleton( 'extension.link_events_to_website_urls.pue', $this );
-		
+
 		if ( ! static::$is_active ) {
 			return;
 		}
