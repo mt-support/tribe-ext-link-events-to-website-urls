@@ -4,7 +4,7 @@
  * Plugin URI:        https://theeventscalendar.com/extensions/make-event-titles-link-to-the-event-website-url/
  * GitHub Plugin URI: https://github.com/mt-support/tribe-ext-link-events-to-website-urls
  * Description:       An extension that makes event titles link to the events' Website URLs when present.
- * Version:           1.2.0
+ * Version:           1.3.0
  * Author:            Modern Tribe, Inc.
  * Author URI:        http://m.tri.be/1971
  * License:           GPL version 3 or any later version
@@ -37,7 +37,7 @@ define( 'TRIBE_EXTENSION_LINK_EVENTS_TO_WEBSITE_URLS_FILE', __FILE__ );
  * @since 1.1.0
  */
 function tribe_extension_link_events_to_website_urls() {
-	// When we dont have autoloader from common we bail.
+	// When we don't have autoloader from common we bail.
 	if ( ! class_exists( 'Tribe__Autoloader' ) ) {
 		return;
 	}

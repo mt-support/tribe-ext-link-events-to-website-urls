@@ -21,6 +21,8 @@
 
 namespace Tribe\Extensions\Event_Link_To_Website_URL;
 
+use TEC\Common\Contracts\Service_Provider;
+
 /**
  * Class Hooks.
  *
@@ -28,7 +30,7 @@ namespace Tribe\Extensions\Event_Link_To_Website_URL;
  *
  * @package Tribe\Extensions\Event_Link_To_Website_URL;
  */
-class Hooks extends \tad_DI52_ServiceProvider {
+class Hooks extends Service_Provider {
 
 	/**
 	 * Binds and sets up implementations.
